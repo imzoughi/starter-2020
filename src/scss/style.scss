@@ -1,0 +1,28 @@
+@import "global";
+@import "mixins";
+@import "header";
+@import "footer";
+@import "colors";
+@import "typography";
+@import "icons";
+@import "fonts";
+
+
+body {
+    background: url("./../src/img/bg-main.jpeg");
+    font-size: 25px;
+    @include flexCHV;
+    height: 100vh;
+    font-family: "Roboto" sans-serif;
+}
+
+.container {
+    padding: 20px;
+    background-color: $dkGray;
+    @include flexCHV;
+
+    h1 {
+        color: $ltGray;
+    }
+}
+
