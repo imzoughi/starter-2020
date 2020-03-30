@@ -5,7 +5,7 @@ const sass = require('gulp-sass');
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
-const uglify = require('gulp-uglify');
+let uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync');
 
 let path = {
@@ -28,7 +28,9 @@ gulp.task("sassTask", function() {
 gulp.task('jsTask', function() {
     return gulp
       .src(path.src_js)
+      .pipe(sourcemaps.init())
       .pipe(uglify())
+      .pipe(sourcemaps.write()) // Inline source maps.
       .pipe(gulp.dest('./dist'))
       .pipe(browserSync.stream());
   });
