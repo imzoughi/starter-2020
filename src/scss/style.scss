@@ -1,18 +1,17 @@
 @import "global";
 @import "mixins";
-@import "header";
-@import "footer";
 @import "colors";
 @import "typography";
 @import "icons";
 @import "fonts";
+@import "header";
+@import "footer";
 
 
 body {
     background: url("./../src/img/bg-main.jpeg");
     font-size: 25px;
     @include flexCHV;
-    height: 100vh;
     font-family: "Roboto" sans-serif;
 }
 
